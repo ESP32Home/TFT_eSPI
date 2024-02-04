@@ -24,7 +24,10 @@
 
 // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
 
+//only include Uer_Setup.h if none of the defined flags are used. currently only one flag supported
+#ifndef TTGO_T_DISPLAY
 #include <User_Setup.h>           // Default setup is root library folder
+#endif
 
 //#include <User_Setups/Setup1_ILI9341.h>  // Setup file for ESP8266 configured for my ILI9341
 //#include <User_Setups/Setup2_ST7735.h>   // Setup file for ESP8266 configured for my ST7735
