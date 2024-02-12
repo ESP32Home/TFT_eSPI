@@ -25,7 +25,11 @@
 // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
 
 //only include Uer_Setup.h if none of the defined flags are used. currently only one flag supported
-#ifndef TTGO_T_DISPLAY
+#if defined(TTGO_T_DISPLAY) || defined(C3_ROUND_DISPLAY)
+#define CUSTOM_DISPLAY
+#endif
+
+#ifndef CUSTOM_DISPLAY
 #include <User_Setup.h>           // Default setup is root library folder
 #endif
 
@@ -60,6 +64,9 @@
 //#include <User_Setups/Setup24_ST7789.h>            // Setup file for DSTIKE/ESP32/ESP8266 configured for ST7789 240 x 240
 #ifdef TTGO_T_DISPLAY
 #include <User_Setups/Setup25_TTGO_T_Display.h>    // Setup file for ESP32 and TTGO T-Display ST7789V SPI bus TFT
+#endif
+#ifdef C3_ROUND_DISPLAY
+#include <User_Setups/Setup400_GC9A01_C3_Round.h>
 #endif
 //#include <User_Setups/Setup26_TTGO_T_Wristband.h>  // Setup file for ESP32 and TTGO T-Wristband ST7735 SPI bus TFT
 
